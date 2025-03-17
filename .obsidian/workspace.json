@@ -165,9 +165,14 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "iconic:Open rulebook": false,
+      "obsidian-leaflet-plugin:Open Leaflet Map": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "469b4cd0ed09997b",
+  "active": "82e7d4c8cc297c2d",
   "lastOpenFiles": []
 }
