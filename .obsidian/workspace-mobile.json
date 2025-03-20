@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "b399891e3e24392c",
+        "id": "fc3edbb26930594b",
         "type": "tabs",
         "children": [
           {
-            "id": "1be7e70e1e43cd11",
+            "id": "8c8fa13e6f51474f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -157,12 +157,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1be7e70e1e43cd11",
+  "active": "8c8fa13e6f51474f",
   "lastOpenFiles": [
+    "images/Ink/Writing/2025.3.20 - 17.42pm.writing",
+    "images/Ink/Writing",
+    "README.md",
     "Ink/Drawing/2025.3.19 - 13.01pm.drawing",
     "Ink/Drawing",
     "Ink",
-    "README.md",
     "images/Ink/Drawing/2025.3.17 - 13.28pm.drawing",
     "images/Ink/Drawing",
     "images/Ink",
