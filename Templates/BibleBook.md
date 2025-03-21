@@ -56,42 +56,35 @@ key_verse: ${keyVerse}
 
 ## Quick Actions
 
-\`\`\`button
-name Read in BibleGateway
-type link
-action https://www.biblegateway.com/passage/?search=${encodeURIComponent(bookName)}&version=ESV
+\`\`\`meta-bind-button
+label: Read in Bible Gateway
+style: default
+class: button-purple
+actions:
+- type: open
+  link: https://www.biblegateway.com/passage/?search=${encodeURIComponent(bookName)}&version=ESV
 \`\`\`
 
-\`\`\`button
-name View Timeline
-type command
-action Templater: Create new note from template
-templater true
-template Timeline
-folder Timelines
-filename ${bookName} Timeline
+\`\`\`meta-bind-button
+label: View Timeline
+style: default
+class: button-blue
+actions:
+- type: templaterCreateNote
+  templateFile: Timeline
+  folder: Timelines
+  filename: ${bookName} Timeline
 \`\`\`
 
-\`\`\`button
-name Add Character Profile
-type command
-action Templater: Create new note from template
-templater true
-template CharacterProfile
-folder Characters
+\`\`\`meta-bind-button
+label: Add Character Profile
+style: default
+class: button-green
+actions:
+- type: templaterCreateNote
+  templateFile: CharacterProfile
+  folder: Characters
 \`\`\`
-
-## Book Information
-
-**Book**: ${bookName}
-**Testament**: ${testament}
-**Category**: ${bookType}
-**Author**: ${author}
-**Time Period**: ${time}
-**Audience**: ${audience}
-**Chapters**: ${chapters}
-**Verses**: ${verses}
-**Key Verse**: ${keyVerse}
 
 ## Historical Context
 
@@ -99,7 +92,7 @@ ${bookData.context || "Historical context of the book..."}
 
 ## Chapters
 
-${Array.from({length: parseInt(chapters) || 0}, (_, i) => `- [[${bookName} ${i+1}]]`).join('\n') || "List of chapters..."}
+${Array.from({length: parseInt(chapters) || 0}, (_, i) => `- [[Bible Books/${bookName}/Chapters/chapter ${i+1}/NASB|${bookName} ${i+1}]]`).join('\n') || "List of chapters..."}
 
 ## Key Passages
 
@@ -107,19 +100,19 @@ ${Array.from({length: parseInt(chapters) || 0}, (_, i) => `- [[${bookName} ${i+1
 
 ## Key Figures
 
-${bookData.figures && bookData.figures.length > 0 ? bookData.figures.map(figure => `- [[${figure}]]`).join('\n') : "- List key figures in the book..."}
+${bookData.figures && bookData.figures.length > 0 ? bookData.figures.map(figure => `- [[Characters/${figure}|${figure}]]`).join('\n') : "- List key figures in the book..."}
 
 ## Key Locations
 
-${bookData.locations && bookData.locations.length > 0 ? bookData.locations.map(location => `- [[${location}]]`).join('\n') : "- List key locations in the book..."}
+${bookData.locations && bookData.locations.length > 0 ? bookData.locations.map(location => `- [[Bible Books/${bookName}/Locations/${location}|${location}]]`).join('\n') : "- List key locations in the book..."}
 
-## Timeline
+## Timelines
 
-- 
+- [[Timelines/${bookName} Timeline|${bookName} Timeline]]
 
 ## Themes and Theology
 
-${bookData.themes && bookData.themes.length > 0 ? bookData.themes.map(theme => `- ${theme}`).join('\n') : "- List main themes..."}
+${bookData.themes && bookData.themes.length > 0 ? bookData.themes.map(theme => `- [[Themes/${theme}|${theme}]]`).join('\n') : "- List main themes..."}
 
 ## Resources
 
