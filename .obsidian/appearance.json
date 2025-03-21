@@ -1,4 +1,8 @@
 {
   "cssTheme": "Fancy-a-Story",
-  "accentColor": "#5e91f5"
+  "accentColor": "#5e91f5",
+  "enabledCssSnippets": [
+    "bible-study",
+    "metabind-styles"
+  ]
 }

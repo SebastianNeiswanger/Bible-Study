@@ -1,0 +1,174 @@
+/* Bible Study Vault Custom Styling */
+
+/* Scripture Quotes */
+blockquote {
+  border-left: 4px solid #938500;
+  background-color: rgba(147, 133, 0, 0.05);
+  padding: 1em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+/* Hebrew/Greek Text */
+code {
+  font-family: "SBL Hebrew", "SBL Greek", monospace;
+  font-size: 1.1em;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 0.2em 0.4em;
+}
+
+/* Scripture References */
+.scripture-ref {
+  color: #938500;
+  font-weight: 600;
+}
+
+/* Headings */
+h1 {
+  border-bottom: 2px solid #938500;
+  padding-bottom: 0.3em;
+  color: #5c5200;
+}
+
+h2 {
+  border-bottom: 1px solid rgba(147, 133, 0, 0.3);
+  padding-bottom: 0.2em;
+  color: #5c5200;
+}
+
+/* Tags */
+.tag {
+  background-color: rgba(147, 133, 0, 0.1);
+  border: 1px solid rgba(147, 133, 0, 0.3);
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: #5c5200;
+  font-size: 0.85em;
+}
+
+/* Timeline styling */
+.timeline-item {
+  border-left: 3px solid #938500;
+}
+
+.timeline-item-title {
+  font-weight: bold;
+  color: #5c5200;
+}
+
+/* Map styling */
+.leaflet-container {
+  border: 1px solid rgba(147, 133, 0, 0.3);
+  border-radius: 5px;
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+th {
+  background-color: rgba(147, 133, 0, 0.2);
+  color: #5c5200;
+  font-weight: bold;
+  padding: 8px;
+  border: 1px solid rgba(147, 133, 0, 0.3);
+}
+
+td {
+  padding: 8px;
+  border: 1px solid rgba(147, 133, 0, 0.3);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(147, 133, 0, 0.05);
+}
+
+/* Callouts */
+.callout {
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em 0;
+  border-left: 4px solid;
+}
+
+.callout-title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.callout[data-callout="scripture"] {
+  background-color: rgba(147, 133, 0, 0.05);
+  border-color: #938500;
+}
+
+.callout[data-callout="historical"] {
+  background-color: rgba(79, 107, 114, 0.05);
+  border-color: #4f6b72;
+}
+
+.callout[data-callout="application"] {
+  background-color: rgba(75, 132, 88, 0.05);
+  border-color: #4b8458;
+}
+
+/* Bible Version Tabs */
+.bible-versions {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(147, 133, 0, 0.3);
+  margin-bottom: 1em;
+}
+
+.bible-version-tab {
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border: 1px solid rgba(147, 133, 0, 0.3);
+  border-bottom: none;
+  margin-right: 0.5em;
+  border-radius: 5px 5px 0 0;
+  background-color: rgba(147, 133, 0, 0.05);
+}
+
+.bible-version-tab.active {
+  background-color: rgba(147, 133, 0, 0.2);
+  font-weight: bold;
+}
+
+/* Cross-reference links */
+a.internal-link {
+  color: #5c5200;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(147, 133, 0, 0.5);
+}
+
+a.internal-link:hover {
+  color: #938500;
+  border-bottom: 1px solid #938500;
+}
+
+/* Frontmatter styling */
+.frontmatter {
+  background-color: rgba(147, 133, 0, 0.05);
+  border: 1px solid rgba(147, 133, 0, 0.1);
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+/* Custom classes for scripture highlighting */
+.highlight-verse {
+  background-color: rgba(236, 214, 0, 0.2);
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+}
+
+.key-concept {
+  font-weight: bold;
+  color: #5c5200;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(147, 133, 0, 0.5);
+} 

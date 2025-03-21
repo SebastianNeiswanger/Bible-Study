@@ -10,5 +10,8 @@
   "obsidian-leaflet-plugin",
   "painter",
   "templater-obsidian",
-  "obsidian-timeline"
+  "obsidian-timeline",
+  "buttons",
+  "obsidian-meta-bind-plugin",
+  "data-files-editor"
 ]

@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "c6e3ea27f6badee5",
+        "id": "25529021c1795921",
         "type": "tabs",
         "children": [
           {
-            "id": "469b4cd0ed09997b",
+            "id": "5925c5fb95b58c02",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Bible Books/Genesis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Genesis"
+            }
+          },
+          {
+            "id": "15ffc4ecd8f7b01f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Bible Books/Exodus.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Exodus"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +109,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +127,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links"
             }
           },
           {
@@ -142,13 +155,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline"
             }
           }
         ]
@@ -173,6 +185,42 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "82e7d4c8cc297c2d",
-  "lastOpenFiles": []
+  "active": "15ffc4ecd8f7b01f",
+  "lastOpenFiles": [
+    "Bible Books/Genesis.md",
+    "Bible Books/Exodus.md",
+    "scripts/testConnection.js",
+    "scripts/bibleData.js",
+    "scripts/bibleData.json",
+    "scripts/README.md",
+    "scripts/getBibleBooksByType.js",
+    "scripts/getBibleBooksByTestament.js",
+    "scripts/getAllBibleBooks.js",
+    "scripts/getRelatedBooks.js",
+    "scripts/generateStudyQuestions.js",
+    "scripts/getBibleBookData.js",
+    "Templates/BibleBook.md",
+    "scripts/user-functions.js",
+    "Templates/Untitled.md",
+    "README.md",
+    "Untitled.md",
+    "Templates/ReadingPlan.md",
+    "Templates/Prayer.md",
+    "Templates/IceBreaker.md",
+    "Templates/LessonPlan.md",
+    "Templates/ChurchNotes.md",
+    "Templates/TimelineView.md",
+    "Templates/TimelineEvent.md",
+    "Templates/TheologicalConcept.md",
+    "Templates/StudyNote.md",
+    "Templates/Relationship.md",
+    "Templates/Reflection.md",
+    "Templates/LocationNote.md",
+    "Templates/DevotionalSmall.md",
+    "Templates/Devotional.md",
+    "Templates/CharacterProfile.md",
+    "Templates/ChapterNotes.md",
+    "Templates/ButtonsDemo.md",
+    "Templates/BookTimeline.md"
+  ]
 }

@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Obsidian
+
+- This is an obsidian.md vault
+- There are plugins already in use, but if you want to use a new plugin feel free to mention it.
+- Please use the plugins. I want to have things like timelines and maps.
+- Make good use of the frontmatter and tags.
+- Use the Templeter plugin for making templates in the `/Templates` folder.
+- attacments go in the `/images` folder.
+- CSS will go in `/.obsidian/snippets`.
+- JS or other scripts will go in `/scripts`.
+- The main [README.md](mdc:README.md) already exists and will be the default file. This should be updated with any new information or setup instructions.
+- I want to use the heatmap on [README.md](mdc:README.md) to keep track of when I make or update new files.
+- Do not attempt to create folders yourself, but instead inform me if it needs done.
+- Any plugins we have are listed in `/.obsidian/plugins`.

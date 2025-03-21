@@ -1,0 +1,223 @@
+.mb-button.button-blue > button {
+  background-color: #4a86e8;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.mb-button.button-blue:hover > button {
+  background-color: #3b78de;
+}
+
+.mb-button.button-green > button {
+  background-color: #6aa84f;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.mb-button.button-green:hover > button {
+  background-color: #5c9745;
+}
+
+.mb-button.button-purple > button {
+  background-color: #9966cc;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.mb-button.button-purple:hover > button {
+  background-color: #8a57bd;
+}
+
+.mb-button.button-yellow > button {
+  background-color: #e69138;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.mb-button.button-yellow:hover > button {
+  background-color: #d68328;
+}
+
+.mb-button.button-red > button {
+  background-color: #cc0000;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.mb-button.button-red:hover > button {
+  background-color: #b80000;
+}
+
+.mb-button.button-default > button {
+  background-color: #999999;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.mb-button.button-default:hover > button {
+  background-color: #888888;
+}
+
+/* Progress bar styling */
+.mb-input-type-progressBar .mb-progress-bar-progress {
+  height: 100%;
+  background-color: #4a86e8;
+}
+
+/* Red progress bar for special cases */
+.mb-input-type-progressBar.red-progress-bar .mb-progress-bar-progress {
+  background: var(--color-red) !important;
+}
+
+/* Green progress bar for reading progress */
+.mb-input-type-progressBar.reading-progress .mb-progress-bar-progress {
+  background: #6aa84f !important;
+}
+
+/* Input field styling */
+.mb-input {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Date picker styling */
+.mb-input-type-date .mb-date-picker-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: var(--background-primary);
+}
+
+/* Number input styling */
+.mb-input-type-number input[type="number"] {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: var(--background-primary);
+}
+
+/* Text input styling */
+.mb-input-type-text input[type="text"] {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: var(--background-primary);
+}
+
+/* Text area styling */
+.mb-input-type-textarea textarea {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: var(--background-primary);
+  width: 100%;
+  min-height: 100px;
+}
+
+/* Select input styling */
+.mb-input-type-select select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background-color: var(--background-primary);
+}
+
+/* Toggle styling */
+.mb-input-type-toggle .mb-toggle-container {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mb-input-type-toggle .mb-toggle-container.toggled {
+  background-color: #6aa84f;
+}
+
+.mb-input-type-toggle .mb-toggle-container::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.mb-input-type-toggle .mb-toggle-container.toggled::before {
+  transform: translateX(20px);
+}
+
+/* Timeline Event Styling */
+.timeline-item {
+  border-left: 2px solid #4a86e8;
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+.timeline-item-title {
+  font-weight: bold;
+  color: #4a86e8;
+}
+
+/* Fix spacing in book metadata */
+.book-metadata {
+  margin-bottom: 0.5rem;
+}
+
+.book-metadata > div {
+  margin-bottom: 0.25rem;
+}
+
+/* Bible verse styling */
+.bible-verse {
+  font-style: italic;
+  padding-left: 2rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.bible-verse::before {
+  content: "🔍";
+  font-size: 3rem;
+  position: absolute;
+  left: 0;
+  top: -1rem;
+  color: #4a86e8;
+  opacity: 0.5;
+}

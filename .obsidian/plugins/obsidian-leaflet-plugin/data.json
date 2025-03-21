@@ -1,5 +1,57 @@
 {
-  "mapMarkers": [],
+  "mapMarkers": [
+    {
+      "id": "abraham-map",
+      "lastAccessed": 1742565654030,
+      "markers": [],
+      "overlays": [],
+      "shapes": [
+        {
+          "type": "polyline",
+          "color": "#3388FF",
+          "vertices": [
+            {
+              "lat": 31.147520510334438,
+              "lng": 34.66735839843751,
+              "id": "ID_d85acac9d8ab",
+              "targets": {
+                "vertexIds": []
+              }
+            },
+            {
+              "lat": 31.714660510339733,
+              "lng": 34.81567382812501,
+              "id": "ID_7b69fae9d9ca",
+              "targets": {
+                "vertexIds": []
+              }
+            },
+            {
+              "lat": 31.58321506275729,
+              "lng": 35.26062011718751,
+              "id": "ID_6bdbb83a6bca",
+              "targets": {
+                "vertexIds": []
+              }
+            },
+            {
+              "lat": 31.64921675093193,
+              "lng": 35.69458007812501,
+              "id": "ID_7bc87b4aeaeb",
+              "targets": {
+                "vertexIds": []
+              }
+            }
+          ],
+          "arrows": false,
+          "reversed": false
+        }
+      ],
+      "files": [
+        "Characters/Abraham.md"
+      ]
+    }
+  ],
   "defaultMarker": {
     "type": "default",
     "iconName": "map-marker",

@@ -1,0 +1,108 @@
+{
+    "Genesis": {
+        "testament": "Old Testament",
+        "type": "Pentateuch",
+        "author": "Moses",
+        "time": "1440-1400 BC",
+        "audience": "Israelites",
+        "chapters": 50,
+        "verses": 1533,
+        "keyVerse": "Genesis 1:1",
+        "locations": ["Eden", "Canaan", "Egypt", "Mesopotamia", "Haran"],
+        "figures": ["Adam", "Eve", "Noah", "Abraham", "Sarah", "Isaac", "Jacob", "Joseph"],
+        "themes": ["Creation", "Fall", "Covenant", "Redemption", "Promise"],
+        "keyEvents": ["Creation", "Fall", "Flood", "Tower of Babel", "Call of Abraham", "Jacob's Journey", "Joseph in Egypt"],
+        "context": "Genesis is the book of beginnings, covering creation through the formation of Israel. It spans approximately 2,000 years, establishes God's covenant with Abraham, and sets the foundation for the rest of Scripture.",
+        "keyWords": [
+            "בְּרֵאשִׁית (bereshit) - 'in the beginning'", 
+            "בָּרָא (bara) - 'created'",
+            "אֱלֹהִים (Elohim) - 'God'",
+            "טוֹב (tov) - 'good'",
+            "בְּרִית (b'rit) - 'covenant'"
+        ],
+        "theologicalConcepts": ["Creation", "Fall", "Sovereignty", "Covenant", "Providence", "Election", "Judgment", "Promise"]
+    },
+    "Exodus": {
+        "testament": "Old Testament",
+        "type": "Pentateuch",
+        "author": "Moses",
+        "time": "1440-1400 BC",
+        "audience": "Israelites",
+        "chapters": 40,
+        "verses": 1213,
+        "keyVerse": "Exodus 3:14",
+        "locations": ["Egypt", "Red Sea", "Mount Sinai", "Wilderness"],
+        "figures": ["Moses", "Aaron", "Pharaoh", "Miriam", "Jethro"],
+        "themes": ["Deliverance", "Law", "Tabernacle", "God's Presence", "Covenant"],
+        "keyEvents": ["Birth of Moses", "Burning Bush", "Ten Plagues", "Passover", "Exodus from Egypt", "Crossing the Red Sea", "Giving of the Law", "Building the Tabernacle"],
+        "context": "Exodus details God's deliverance of Israel from Egyptian slavery, the establishment of the Law, and the creation of the tabernacle. It covers approximately 80 years, focusing on Israel's formation as a nation.",
+        "keyWords": [
+            "שְׁמוֹת (shemot) - 'names'",
+            "פסח (pesach) - 'passover'",
+            "תּוֹרָה (torah) - 'law'"
+        ],
+        "theologicalConcepts": ["Deliverance", "Law", "Covenant", "Worship", "Divine Presence", "Holiness", "Priesthood", "Sacrifice"]
+    },
+    "Leviticus": {
+        "testament": "Old Testament",
+        "type": "Pentateuch",
+        "author": "Moses",
+        "time": "1445-1444 BC",
+        "audience": "Israelite priests and people",
+        "chapters": 27,
+        "verses": 859,
+        "keyVerse": "Leviticus 19:2",
+        "locations": ["Mount Sinai"],
+        "figures": ["Moses", "Aaron", "Nadab", "Abihu"],
+        "themes": ["Holiness", "Sacrifice", "Priesthood", "Atonement", "Purity"],
+        "keyEvents": ["Consecration of Priests", "Death of Nadab and Abihu", "Day of Atonement", "Establishment of Feasts"],
+        "context": "Leviticus provides Israel with laws regarding sacrifice, ritual, and morality. It communicates God's holiness and how Israel is to live as His covenant people.",
+        "keyWords": [
+            "וַיִּקְרָא (vayikra) - 'and He called'",
+            "קדש (kadosh) - 'holy'",
+            "כפר (kaphar) - 'to atone'"
+        ],
+        "theologicalConcepts": ["Holiness", "Atonement", "Sacrifice", "Priesthood", "Clean/Unclean", "Divine Presence", "Forgiveness", "Sanctification"]
+    },
+    "Numbers": {
+        "testament": "Old Testament",
+        "type": "Pentateuch",
+        "author": "Moses",
+        "time": "1444-1406 BC",
+        "audience": "Israelites",
+        "chapters": 36,
+        "verses": 1288,
+        "keyVerse": "Numbers 6:24-26",
+        "locations": ["Wilderness", "Moab", "Kadesh-Barnea"],
+        "figures": ["Moses", "Aaron", "Joshua", "Caleb", "Balaam", "Korah"],
+        "themes": ["Wandering", "Testing", "Faith", "Rebellion", "Providence"],
+        "keyEvents": ["Census", "Twelve Spies", "Rebellion at Kadesh", "Korah's Rebellion", "Bronze Serpent", "Balaam and Balak"],
+        "context": "Numbers records Israel's 40-year wilderness journey from Sinai to the plains of Moab, focusing on their rebellion and God's faithfulness despite their unfaithfulness.",
+        "keyWords": [
+            "במדבר (bamidbar) - 'in the wilderness'",
+            "מנה (manah) - 'to count'"
+        ],
+        "theologicalConcepts": ["Faithfulness", "Rebellion", "Judgment", "Providence", "Leadership", "Testing", "Divine Guidance", "Promise"]
+    },
+    "Deuteronomy": {
+        "testament": "Old Testament",
+        "type": "Pentateuch",
+        "author": "Moses",
+        "time": "1406 BC",
+        "audience": "New generation of Israelites",
+        "chapters": 34,
+        "verses": 959,
+        "keyVerse": "Deuteronomy 6:4-5",
+        "locations": ["Plains of Moab", "Mount Nebo"],
+        "figures": ["Moses", "Joshua"],
+        "themes": ["Covenant Renewal", "Obedience", "Blessing", "Curse", "Love"],
+        "keyEvents": ["Moses' Speeches", "Covenant Renewal", "Appointment of Joshua", "Death of Moses"],
+        "context": "Deuteronomy contains Moses' final speeches to Israel before they enter the Promised Land. It renews the covenant with the new generation and emphasizes loving God and keeping His commandments.",
+        "keyWords": [
+            "דברים (devarim) - 'words'",
+            "שמע (shema) - 'hear'",
+            "אהב (ahav) - 'love'"
+        ],
+        "theologicalConcepts": ["Covenant", "Law", "Obedience", "Blessing/Curse", "Love", "Faithfulness", "Promise", "Legacy"]
+    }
+} 
