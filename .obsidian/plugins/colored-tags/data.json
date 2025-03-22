@@ -54,7 +54,9 @@
     "for": 42,
     "this": 43,
     "Bible": 44,
-    "genesis": 45
+    "genesis": 45,
+    "saturday": 46,
+    "sunday-morning": 47
   },
   "_version": 3
 }

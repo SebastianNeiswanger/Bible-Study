@@ -1,245 +1,123 @@
 ---
-tags: [church-notes, sermon, <% tp.file.cursor(1) %>, <%* 
+tags: [church-notes, sermon, <%* 
 // Add dynamic day-of-week tag
 tR += moment().format("dddd").toLowerCase();
+%>, <%* 
+// Add event tag
+let event = await tp.system.suggester(["Sunday Morning", "Sunday Evening", "Wednesday Night", "Holiday"], ["Sunday Morning", "Sunday Evening", "Wednesday Night", "Holiday"]);
+tR += event ? event.toLowerCase().replace(/\s+/g, "-") : "service";
 %>]
 date: <% tp.date.now("YYYY-MM-DD") %>
-speaker: <% tp.file.cursor(2) %>
-event: <% tp.file.cursor(3) %>
-bible_references: [<% tp.file.cursor(4) %>]
+speaker: <%* tR += await tp.system.prompt("Speaker name?", "Pastor Schuler"); %>
+event: <%* tR += event; %>
+bible_references: [<%* 
+let keyPassage = await tp.system.prompt("Key scripture passage text?", "");
+if (keyPassage) {
+    tR += `"${keyPassage}"`;
+}
+%>]
+sermon_theme: <%*
+let theme = tp.file.title;
+tR += theme;
+%>
 service_time: <%* 
 // Auto detect time of day and suggest service time
 let hour = moment().hour();
 if (hour < 12) {
     tR += "Morning Service";
-} else if (hour < 16) {
-    tR += "Afternoon Service";
 } else {
     tR += "Evening Service";
 }
 %>
-attendance: <%* 
-// Placeholder for attendance tracking
-tR += ""; 
+livestream: <%* 
+// Store these values directly for later access
+const saved_livestream = await getYouTubeLiveLink();
+tR += saved_livestream;
+
+// We'll add the YouTube live link if available through our script
+async function getYouTubeLiveLink() {
+    try {
+        // Logging for debugging
+        console.log("Available tp.user functions:", Object.keys(tp.user || {}));
+        
+        // Use our templaterYouTube functions if available
+        if (tp.user && tp.user.templaterYouTube) {
+            console.log("templaterYouTube found:", typeof tp.user.templaterYouTube);
+            
+            // First try to get a live stream
+            if (typeof tp.user.templaterYouTube.getLivestream === 'function') {
+                console.log("getLivestream function found");
+                const liveUrl = tp.user.templaterYouTube.getLivestream(tp);
+                console.log("getLivestream result:", liveUrl);
+                if (liveUrl && typeof liveUrl === 'string' && liveUrl.trim() !== '') {
+                    return liveUrl;
+                }
+            }
+            
+            // Then try to get a scheduled stream if available
+            if (typeof tp.user.templaterYouTube.getNextScheduledStream === 'function') {
+                console.log("getNextScheduledStream function found");
+                const scheduledUrl = tp.user.templaterYouTube.getNextScheduledStream(tp);
+                console.log("getNextScheduledStream result:", scheduledUrl);
+                if (scheduledUrl && typeof scheduledUrl === 'string' && scheduledUrl.trim() !== '') {
+                    return scheduledUrl;
+                }
+            }
+            
+            // If we get here, try the main function directly
+            if (typeof tp.user.templaterYouTube === 'function') {
+                console.log("Trying main templaterYouTube function");
+                const mainUrl = tp.user.templaterYouTube(tp);
+                console.log("Main function result:", mainUrl);
+                if (mainUrl && typeof mainUrl === 'string' && mainUrl.trim() !== '') {
+                    return mainUrl;
+                }
+            }
+        }
+        
+        // Otherwise prompt for a link
+        console.log("Prompting for URL");
+        const result = await tp.system.prompt(
+            "Add YouTube livestream link? Leave empty to auto-fetch or paste a direct link", 
+            ""
+        );
+        
+        if (result && result.trim() !== '') {
+            return result.trim();
+        } else {
+            return "https://www.youtube.com/@FirstBaptistNilesOhio/live";
+        }
+    } catch (error) {
+        console.error("Error fetching YouTube stream:", error);
+        return "https://www.youtube.com/@FirstBaptistNilesOhio/live";
+    }
+}
 %>
-followup_required: false
+show_embed: true
+cssclass: church-notes
 ---
 
 # <%* 
-// Generate better note title with date
-let title = tp.file.title;
-let date = moment().format("MMMM D, YYYY");
+// Initialize variables for the note
 let dayOfWeek = moment().format("dddd");
-let speaker = tp.file.cursor(2);
+let speaker = tp.frontmatter.speaker || "Pastor Schuler";
+let sermonTheme = tp.frontmatter.sermon_theme || "";
 
-if (speaker) {
-    tR += `${dayOfWeek} Service (${date}) - ${speaker}`;
+// Make sure we can access livestream, key passage
+window.saved_livestream = saved_livestream;
+window.keyPassage = keyPassage;
+
+// Generate note title
+let noteTitle = "";
+if (sermonTheme) {
+    noteTitle = sermonTheme;
 } else {
-    tR += title;
-}
-%>
-
-## Quick Actions
-```meta-bind-button
-label: 🔍 Look Up Scripture
-style: default
-class: button-blue
-actions:
-- type: open
-  link: https://www.biblegateway.com/passage/?search=<% tp.file.cursor(4) %>
-  newTab: true
-```
-
-```meta-bind-button
-label: 📖 New Devotional
-style: default
-class: button-green
-actions:
-- type: templaterCreateNote
-  templateFile: Templates/Devotional.md
-  folder: Devotional
-```
-
-```meta-bind-button
-label: 📝 New Lesson from Sermon
-style: default
-class: button-purple
-actions:
-- type: templaterCreateNote
-  templateFile: Templates/LessonPlan.md
-  folder: Lessons
-```
-
-## Service Details
-- **Date:** <% moment().format("dddd, MMMM Do, YYYY") %>
-- **Time:** `=this.service_time`
-- **Speaker:** <% tp.file.cursor(2) %>
-- **Event/Service:** <% tp.file.cursor(3) %>
-- **Weather:** <%* 
-// Simple placeholder for weather - in a real implementation, this could be a script that fetches weather
-let seasons = ["Winter", "Spring", "Summer", "Fall"];
-let currentMonth = moment().month();
-let season = seasons[Math.floor(currentMonth / 3) % 4];
-let weather = ["Sunny", "Cloudy", "Rainy", "Snowy", "Partly Cloudy", "Clear", "Stormy"];
-let randomWeather = weather[Math.floor(Math.random() * weather.length)];
-tR += `${randomWeather}, ${season} day`;
-%>
-
-## Main Scripture References
-<% tp.file.cursor(4) %>
-
-### Key Passage
-```
-<% tp.file.cursor(5) %>
-```
-
-```meta-bind-button
-label: 📋 Copy to Clipboard
-style: default
-class: button-default
-actions:
-- type: command
-  command: editor:copy
-```
-
-## Sermon Theme
-<%* 
-// Auto-suggest sermon theme based on Bible reference
-let bibleRefThemes = {
-    "John 3": ["God's Love", "Salvation", "Being Born Again"],
-    "Romans 8": ["God's Sovereignty", "Suffering and Glory", "Life in the Spirit"],
-    "Psalm 23": ["God's Provision", "Comfort in Trouble", "The Good Shepherd"],
-    "Matthew 5": ["Kingdom Living", "The Beatitudes", "Salt and Light"],
-    "Genesis 1": ["Creation", "God's Power", "The Beginning"],
-    "Philippians 4": ["Joy", "Peace", "Contentment"],
-    "1 Corinthians 13": ["Love", "Spiritual Gifts", "The Greatest Virtue"],
-    "Hebrews 11": ["Faith", "Old Testament Heroes", "Perseverance"]
-};
-
-let reference = tp.file.cursor(4);
-let theme = "";
-
-// Check if the reference matches any keys
-for (let ref in bibleRefThemes) {
-    if (reference && reference.includes(ref)) {
-        // Get a random theme from the array
-        let themes = bibleRefThemes[ref];
-        theme = themes[Math.floor(Math.random() * themes.length)];
-        break;
+    noteTitle = `${dayOfWeek} Service (${moment().format("MMMM D, YYYY")})`;
+    if (speaker) {
+        noteTitle += ` - ${speaker}`;
     }
 }
 
-if (theme) {
-    tR += theme + " (suggested)";
-} else {
-    tR += tp.file.cursor(6);
-}
-%>
-
-## Main Points
-<%* 
-// Dynamic sermon points template
-let mainPoints = [];
-let pointCount = 3; // Default number of points
-
-// Generate placeholders for the main points with number placeholders
-for (let i = 1; i <= pointCount; i++) {
-    mainPoints.push(`${i}. <% tp.file.cursor(${6 + i}) %>`);
-}
-
-tR += mainPoints.join("\n");
-%>
-
-```meta-bind-button
-label: ➕ Add Point
-style: default
-class: button-default
-actions:
-- type: command
-  command: editor:insert-text
-  payload: "4. "
-```
-
-## Illustrations/Stories Used
-<% tp.file.cursor(10) %>
-
-## Quotes
-> <% tp.file.cursor(11) %>
-
-```meta-bind-button
-label: ➕ Add Quote
-style: default
-class: button-default
-actions:
-- type: command
-  command: editor:insert-text
-  payload: "> "
-```
-
-## Personal Application
-<% tp.file.cursor(12) %>
-
-```meta-bind-button
-label: 🙏 Add to Prayer List
-style: default
-class: button-blue
-actions:
-- type: templaterCreateNote
-  templateFile: Templates/Prayer.md
-  folder: Prayers
-```
-
-```meta-bind-button
-label: ✅ Create Action Item
-style: default
-class: button-green
-actions:
-- type: command
-  command: editor:insert-text
-  payload: "- [ ] "
-```
-
-## Questions for Further Study
-<%* 
-// Generate some default questions based on the day of the week
-let defaultQuestions = {
-    "Sunday": ["1. How does this message connect to last week's sermon?", 
-               "2. What one truth from this sermon can I apply this week?"],
-    "Wednesday": ["1. How does this midweek message build on Sunday's teaching?", 
-                  "2. What practical steps can I take based on this message?"],
-    "Default": ["1. What was the main thesis of the sermon?", 
-                "2. What scripture passages were most impactful?"]
-};
-
-let day = moment().format("dddd");
-let questionSet = defaultQuestions[day] || defaultQuestions["Default"];
-
-tR += questionSet.join("\n\n");
-%>
-
-```meta-bind-button
-label: ❓ Add Question
-style: default
-class: button-default
-actions:
-- type: command
-  command: editor:insert-text
-  payload: "3. "
-```
-
-```meta-bind-button
-label: 📚 Start Study on Topic
-style: default
-class: button-yellow
-actions:
-- type: templaterCreateNote
-  templateFile: Templates/Devotional.md
-  folder: Devotional
-  notePath: Devotional/Study - <%* tR += tp.frontmatter["sermon_theme"] || tp.file.cursor(6); %>
-```
-
-## Related Topics
-<%* 
 // Auto-suggest related topics based on Bible book
 let bookTopics = {
     "Genesis": ["Creation", "Fall", "Covenant", "Patriarchs"],
@@ -253,19 +131,20 @@ let bookTopics = {
 };
 
 // Try to extract the Bible book from the reference
-let bibleRef = tp.file.cursor(4);
 let book = "";
-
-// Common Bible books to check for
 let bibleBooks = Object.keys(bookTopics);
-for (let bibleBook of bibleBooks) {
-    if (bibleRef && bibleRef.includes(bibleBook)) {
-        book = bibleBook;
-        break;
+
+if (keyPassage) {
+    for (let bibleBook of bibleBooks) {
+        if (keyPassage.includes(bibleBook)) {
+            book = bibleBook;
+            break;
+        }
     }
 }
 
 // Suggest topics based on the book
+let relatedTopics = "";
 if (book && bookTopics[book]) {
     let topics = bookTopics[book];
     // Select 2 random topics
@@ -276,11 +155,118 @@ if (book && bookTopics[book]) {
         topics.splice(randIndex, 1);
     }
     
-    tR += "- " + selectedTopics.join("\n- ");
+    relatedTopics = "- " + selectedTopics.join("\n- ");
 } else {
-    tR += tp.file.cursor(15);
+    relatedTopics = "- Topic 1\n- Topic 2";
+}
+
+// Generate questions based on day of week
+let defaultQuestions = {
+    "Sunday": ["1. How does this message connect to last week's sermon?", 
+               "2. What one truth from this sermon can I apply this week?"],
+    "Wednesday": ["1. How does this midweek message build on Sunday's teaching?", 
+                  "2. What practical steps can I take based on this message?"],
+    "Default": ["1. What was the main thesis of the sermon?", 
+                "2. What scripture passages were most impactful?"]
+};
+
+let questionsText = "";
+let questionSet = defaultQuestions[dayOfWeek] || defaultQuestions["Default"];
+questionsText = questionSet.join("\n\n");
+
+let title = tp.file.title;
+let date = moment().format("YYYY-MM-DD");
+tR += noteTitle;
+%>
+
+>[!summary] Quick Info
+>- **Theme:** <%* tR += theme; %>
+>- **Speaker:** <%* tR += speaker; %>
+>- **Event:** <%* tR += event; %>
+>- **Date:** <%* tR += moment().format("dddd, MMMM Do, YYYY"); %>
+>- **Scripture:** <%* tR += keyPassage || ""; %>
+
+## :LiYoutube: Livestream
+<%* 
+// Make sure we have a defined livestream URL
+let churchUrl = "https://www.youtube.com/@FirstBaptistNilesOhio";
+let livestreamUrl = window.saved_livestream || "";
+
+// Debug information
+let debugInfo = "";
+debugInfo += `Saved livestream: ${typeof window.saved_livestream}: ${JSON.stringify(window.saved_livestream)}\n`;
+if (tp.frontmatter) {
+    debugInfo += `Frontmatter keys: ${Object.keys(tp.frontmatter).join(", ")}\n`;
+    debugInfo += `Livestream value: ${typeof tp.frontmatter.livestream}: ${JSON.stringify(tp.frontmatter.livestream)}\n`;
+}
+if (tp.user) {
+    debugInfo += `User functions: ${Object.keys(tp.user).join(", ")}\n`;
+    if (tp.user.templaterYouTube) {
+        debugInfo += `templaterYouTube type: ${typeof tp.user.templaterYouTube}\n`;
+        if (typeof tp.user.templaterYouTube === 'function') {
+            debugInfo += `templaterYouTube methods: ${Object.keys(tp.user.templaterYouTube).join(", ")}\n`;
+        }
+    } else {
+        debugInfo += "templaterYouTube not found\n";
+    }
+}
+
+// First check if we have a valid livestream URL
+if (livestreamUrl && typeof livestreamUrl === 'string' && livestreamUrl.trim() !== '') {
+    // Add a note about whether it's live or scheduled
+    if (livestreamUrl.includes('/streams')) {
+        tR += "⏰ **Scheduled Stream** - Church has a scheduled livestream. The link will update when it goes live.\n\n";
+    } else if (livestreamUrl.includes('/live')) {
+        tR += "🔴 **Live Stream** - Church is currently live or will be streaming to this URL.\n\n";
+    }
+    
+    // Create the vid code block with the URL
+    tR += "```vid\n" + livestreamUrl + "\n```";
+} else {
+    // No livestream URL provided
+    tR += "No livestream URL available. [Check the church YouTube channel](https://www.youtube.com/@FirstBaptistNilesOhio)";
+    
+    // Add debug info in a collapsible section
+    tR += "\n\n<details><summary>Debug Information</summary>\n\n```\n" + debugInfo + "\n```\n</details>";
 }
 %>
+
+## :LiNotebookPen: Notes
+
+1. 
+
+## :LiGitMerge: Personal Application
+> [!question] How can I apply this message to my life?
+
+```meta-bind-button
+label: 🙏 Add to Prayer List
+style: default
+class: button-blue
+actions:
+- type: templaterCreateNote
+  templateFile: Templates/Prayer.md
+  folderPath: Prayers
+  fileName: <%* tR += "Prayers from " + date; %>
+```
+
+- [ ] 
+
+## :LiMessageCircleQuestion: Questions for Further Study
+<%* tR += questionsText; %>
+
+```meta-bind-button
+label: 📚 Start Study on Topic
+style: default
+class: button-yellow
+actions:
+- type: templaterCreateNote
+  templateFile: Templates/Devotional.md
+  folderPath: Devotional
+  fileName: <%* tR += "Study - " + title; %>
+```
+
+## :LiGitCompare: Related Topics
+<%* tR += relatedTopics; %>
 
 ```meta-bind-button
 label: 🔍 Research Topic
@@ -289,55 +275,13 @@ class: button-default
 actions:
 - type: open
   link: https://www.biblestudytools.com/dictionary/
-  newTab: true
-```
-
-## Additional Notes
-<%* 
-// Add a timestamp for when these notes were taken
-tR += "Notes taken on " + moment().format("YYYY-MM-DD HH:mm:ss") + "\n\n";
-tR += tp.file.cursor(16);
-%>
-
-```meta-bind-button
-label: 🎙️ Add Voice Recording
-style: default
-class: button-purple
-actions:
-- type: command
-  command: audio-recorder:start-recording
 ```
 
 ```meta-bind-button
-label: 📅 Add to Calendar
+label: 📺 Open YouTube Channel
 style: default
-class: button-blue
+class: button-red
 actions:
 - type: open
-  link: https://calendar.google.com/calendar/u/0/r/eventedit?text=<%* 
-  // Format the calendar event title and details
-  let eventText = encodeURIComponent(`Follow-up: ${tp.file.cursor(6) || "Sermon"} (${tp.file.cursor(2) || "Speaker"})`);
-  tR += eventText;
-  %>&dates=<%* 
-  // Set the event for next week
-  let nextWeek = moment().add(7, 'days');
-  let start = nextWeek.format("YYYYMMDDTHHmmss");
-  let end = nextWeek.add(1, 'hours').format("YYYYMMDDTHHmmss");
-  tR += `${start}/${end}`;
-  %>
-  newTab: true
+  link: https://www.youtube.com/@FirstBaptistNilesOhio
 ```
-
-## Follow-up Actions
-- **Required:** `INPUT[toggle:followup_required]`
-
-<%* 
-// Only show this section if follow-up is required
-if (tp.frontmatter.followup_required) {
-    tR += "- [ ] Share notes with small group\n";
-    tR += "- [ ] Review sermon recording\n";
-    tR += "- [ ] Discuss with family\n";
-} else {
-    tR += "<!-- Toggle the follow-up required switch to show actions -->";
-}
-%> 

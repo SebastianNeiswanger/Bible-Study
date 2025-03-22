@@ -14,7 +14,10 @@ alwaysApply: true
 - attacments go in the `/images` folder.
 - CSS will go in `/.obsidian/snippets`.
 - JS or other scripts will go in `/scripts`.
+    - Scripts can only have one export per file and should follow the CommonJS module specification found at [https://flaviocopes.com/commonjs/].
+    - Every script will try being loaded, so all of them must follow these rules.
 - The main [README.md](mdc:README.md) already exists and will be the default file. This should be updated with any new information or setup instructions.
 - I want to use the heatmap on [README.md](mdc:README.md) to keep track of when I make or update new files.
 - Do not attempt to create folders yourself, but instead inform me if it needs done.
 - Any plugins we have are listed in `/.obsidian/plugins`.
+- When making a template with templater, never use the `tp.file.cursor` function.

@@ -21,7 +21,68 @@
   },
   "appIcons": {},
   "tabIcons": {},
-  "fileIcons": {},
+  "fileIcons": {
+    "Bible Books": {
+      "icon": "lucide-book-text",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "Characters": {
+      "icon": "lucide-person-standing",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "Church": {
+      "icon": "lucide-church",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "Devotional": {
+      "icon": "lucide-book-audio",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "Languages": {
+      "icon": "lucide-languages",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "Lessons": {
+      "icon": "lucide-flask-conical",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "Templates": {
+      "icon": "lucide-book-template",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "Timeline": {
+      "icon": "lucide-timer",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "images": {
+      "icon": "lucide-image",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    },
+    "scripts": {
+      "icon": "lucide-scroll",
+      "unsynced": [
+        "fd618cd05b3cfcc8"
+      ]
+    }
+  },
   "bookmarkIcons": {},
   "tagIcons": {},
   "propertyIcons": {},

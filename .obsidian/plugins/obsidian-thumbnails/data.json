@@ -1,0 +1,8 @@
+{
+  "storeInfo": true,
+  "saveImages": true,
+  "imageLocation": "specifiedFolder",
+  "imageFolder": "images/youtubeThumbnails",
+  "responsiveCardStyle": true,
+  "youtubeApiKey": ""
+}

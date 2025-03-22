@@ -27,5 +27,6 @@
     "ink:create-handwritten-section",
     "ink:create-drawing-section",
     "painter:open-menu"
-  ]
+  ],
+  "showLineNumber": false
 }

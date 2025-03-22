@@ -15,5 +15,7 @@
   "obsidian-meta-bind-plugin",
   "data-files-editor",
   "homepage",
-  "folder-notes"
+  "folder-notes",
+  "obsidian-thumbnails",
+  "obsidian-icon-folder"
 ]
