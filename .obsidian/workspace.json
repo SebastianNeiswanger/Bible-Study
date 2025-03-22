@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5db4ef052b4dc65f",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "910333bbc18996f4",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -171,10 +171,13 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "82e7d4c8cc297c2d",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "Church/Why Church Matters.md",
     "README.md",
+    "Untitled.md",
+    "Templates/TheologicalConcept.md",
+    "Templates/Prayer.md",
     "Templates/ChurchNotes.md",
     "images/youtubeThumbnails/fv5QDZVvxcE.jpg",
     "images/youtubeThumbnails",
@@ -204,9 +207,6 @@
     "Bible Books/Exodus.md",
     "scripts/README.md",
     "Templates/Untitled.md",
-    "Templates/ReadingPlan.md",
-    "Templates/Prayer.md",
-    "Templates/IceBreaker.md",
-    "Templates/LessonPlan.md"
+    "Templates/ReadingPlan.md"
   ]
 }

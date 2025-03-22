@@ -17,7 +17,8 @@ if (keyPassage) {
 }
 %>]
 sermon_theme: <%*
-let theme = tp.file.title;
+let theme = await tp.system.prompt("Sermon theme?", "");
+await tp.file.rename(theme);
 tR += theme;
 %>
 service_time: <%* 
@@ -177,6 +178,7 @@ questionsText = questionSet.join("\n\n");
 let title = tp.file.title;
 let date = moment().format("YYYY-MM-DD");
 tR += noteTitle;
+await tp.file.cursor(1);
 %>
 
 >[!summary] Quick Info
@@ -262,7 +264,7 @@ actions:
 - type: templaterCreateNote
   templateFile: Templates/Devotional.md
   folderPath: Devotional
-  fileName: <%* tR += "Study - " + title; %>
+  fileName: <%* tR += "Study - " + theme; %>
 ```
 
 ## :LiGitCompare: Related Topics

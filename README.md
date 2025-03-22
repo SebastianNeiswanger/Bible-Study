@@ -11,7 +11,7 @@ class: button-blue
 actions:
 - type: templaterCreateNote
   templateFile: Templates/Devotional.md
-  folder: Devotional
+  folderPath: Devotional
 ```
 
 ```meta-bind-button
@@ -21,7 +21,8 @@ class: button-green
 actions:
 - type: templaterCreateNote
   templateFile: Templates/ChurchNotes.md
-  folder: Church
+  folderPath: Church
+  openNote: true
 ```
 
 ```meta-bind-button
@@ -31,7 +32,7 @@ class: button-purple
 actions:
 - type: templaterCreateNote
   templateFile: Templates/LessonPlan.md
-  folder: Lessons
+  folderPath: Lessons
 ```
 
 ```meta-bind-button
@@ -41,8 +42,7 @@ class: button-yellow
 actions:
 - type: templaterCreateNote
   templateFile: Templates/CharacterProfile.md
-  folder: Characters
-  notePath: Characters/Character - New
+  folderPath: Characters
 ```
 
 ```meta-bind-button
@@ -52,8 +52,7 @@ class: button-red
 actions:
 - type: templaterCreateNote
   templateFile: Templates/TimelineEvent.md
-  folder: Timeline
-  notePath: Timeline/Event - New
+  folderPath: Timeline
 ```
 
 ```meta-bind-button
@@ -63,8 +62,7 @@ class: button-blue
 actions:
 - type: templaterCreateNote
   templateFile: Templates/BibleBook.md
-  folder: Books
-  notePath: Books/New Book Study
+  folderPath: Books
 ```
 
 ## Structure
