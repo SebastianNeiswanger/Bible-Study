@@ -11,7 +11,7 @@ bible_references:
   - 1 Timothy 3:1-7
 sermon_theme: Installation Service
 service_time: Evening Service
-livestream: https://www.youtube.com/@FirstBaptistNilesOhio/live
+livestream: https://www.youtube.com/live/dwD3C0LDl-I?si=DJ2jaqbfTmtZeWpT
 show_embed: true
 cssclasses:
   - church-notes
@@ -30,7 +30,7 @@ cssclasses:
 🔴 **Live Stream** - Church is currently live or will be streaming to this URL.
 
 ```vid
-https://www.youtube.com/@FirstBaptistNilesOhio/live
+https://www.youtube.com/live/dwD3C0LDl-I?si=DJ2jaqbfTmtZeWpT
 ```
 
 ## :LiNotebookPen: Notes
