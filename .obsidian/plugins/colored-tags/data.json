@@ -36,7 +36,9 @@
     "church": 24,
     "sermon": 25,
     "sunday": 26,
-    "sunday-evening": 27
+    "sunday-evening": 27,
+    "wednesday": 28,
+    "wednesday-night": 29
   },
   "_version": 3
 }

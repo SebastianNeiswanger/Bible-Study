@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Church/Installation Service.md",
+                "file": "Church/unknown .md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Installation Service"
+              "title": "unknown"
             }
           }
         ]
@@ -159,23 +159,25 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "images/Ink/Writing/2025.3.26 - 18.34pm.writing",
+    "README.md",
+    "Church/unknown .md",
+    "Church/Church.md",
+    "Church/.md",
+    "Church/Installation Service.md",
+    "images/Ink/Writing/2025.3.26 - 18.20pm.writing",
     "images/Ink/Writing/2025.3.23 - 15.15pm.writing",
     "Templates/BibleBook.md",
-    "README.md",
-    "Church/Installation Service.md",
     "images/Ink/Drawing/2025.3.23 - 14.13pm.drawing",
     "images/Ink/Drawing",
     "images/Ink/Writing/2025.3.23 - 14.10pm.writing",
     "images/Ink/Writing",
     "images/Ink",
-    "Church/Church.md",
     "Church",
     "scripts/README-YouTube.md",
     "scripts/generateStudyQuestions.js",
     "scripts/getAllBibleBooks.js",
     "scripts/README.md",
-    "scripts/testConnection.js",
-    "scripts/bibleData.json",
     "Lessons/Lessons.md",
     "Timeline/Timeline.md",
     "Bible Books/Bible Books.md",
@@ -193,8 +195,6 @@
     "Templates/TimelineView.md",
     "Templates/ChurchNotes.md",
     "Templates/StudyNote.md",
-    "Templates/Reflection.md",
-    "Templates/ChapterNotes.md",
     "images/youtubeThumbnails/fv5QDZVvxcE.jpg"
   ]
 }
