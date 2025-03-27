@@ -27,10 +27,13 @@ cssclasses:
 >- **Scripture:** 1 Timothy 3:1-7
 
 ## :LiYoutube: Livestream
-🔴 **Live Stream** - Church is currently live or will be streaming to this URL.
 
 ```vid
 https://www.youtube.com/live/dwD3C0LDl-I?si=DJ2jaqbfTmtZeWpT
+Title: Pastor Schuler Installation Service
+Author: First Baptist Church of Niles
+Thumbnail: https://i.ytimg.com/vi/dwD3C0LDl/mqdefault.jpg
+AuthorUrl: https://www.youtube.com/@FirstBaptistNilesOhio
 ```
 
 ## :LiNotebookPen: Notes

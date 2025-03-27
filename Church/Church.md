@@ -16,7 +16,7 @@ TABLE WITHOUT ID
   sermon_theme as "Theme",
   date as "Date"
 FROM "Church"
-WHERE tags contains "church-notes"
+WHERE contains(file.tags, "church-notes")
 SORT date DESC
 LIMIT 5
 ```
@@ -28,11 +28,6 @@ TABLE WITHOUT ID
   speaker as "Speaker", 
   sermon_theme as "Theme"
 FROM "Church"
-WHERE tags contains "church-notes" 
-AND tags contains "sunday"
-AND tags contains "sunday-morning"
-SORT date DESC
-LIMIT 10
 ```
 
 ## Sunday Evening Services
@@ -42,9 +37,9 @@ TABLE WITHOUT ID
   speaker as "Speaker", 
   sermon_theme as "Theme"
 FROM "Church"
-WHERE tags contains "church-notes" 
-AND tags contains "sunday"
-AND tags contains "sunday-evening"
+WHERE contains(file.tags, "church-notes") 
+AND contains(file.tags, "sunday")
+AND contains(file.tags, "sunday-evening")
 SORT date DESC
 LIMIT 10
 ```
@@ -56,8 +51,8 @@ TABLE WITHOUT ID
   speaker as "Speaker", 
   sermon_theme as "Theme"
 FROM "Church"
-WHERE tags contains "church-notes" 
-AND tags contains "wednesday"
+WHERE contains(file.tags, "church-notes") 
+AND contains(file.tags, "wednesday")
 SORT date DESC
 LIMIT 10
 ```
@@ -66,7 +61,7 @@ LIMIT 10
 ```dataview
 LIST
 FROM "Church"
-WHERE tags contains "church-notes"
+WHERE contains(file.tags, "church-notes")
 FLATTEN bible_references as reference
 GROUP BY reference
 SORT length(rows) DESC

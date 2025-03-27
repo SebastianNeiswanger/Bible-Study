@@ -3,10 +3,10 @@ tags: [church-notes, sermon, wednesday, wednesday-night]
 date: 2025-03-26
 speaker: Pastor Schuler
 event: Wednesday Night
-bible_references: ["unknown "]
-sermon_theme: unknown 
+bible_references: ["Philemon 1:8-15"]
+sermon_theme: Broken Relationships
 service_time: Evening Service
-livestream: https://www.youtube.com/@FirstBaptistNilesOhio/live
+livestream: https://www.youtube.com/watch?v=BaI0T3uSNuY
 show_embed: true
 cssclass: church-notes
 ---
@@ -21,10 +21,13 @@ cssclass: church-notes
 >- **Scripture:** Philemon 1:8-15
 
 ## :LiYoutube: Livestream
-🔴 **Live Stream** - Church is currently live or will be streaming to this URL.
 
 ```vid
-https://www.youtube.com/@FirstBaptistNilesOhio/live
+https://www.youtube.com/watch?v=BaI0T3uSNuY
+Title: Wednesday Night - 3/26/2025
+Author: First Baptist Church of Niles
+Thumbnail: images/youtubeThumbnails/BaI0T3uSNuY.jpg
+AuthorUrl: https://www.youtube.com/@FirstBaptistNilesOhio
 ```
 
 ## :LiNotebookPen: Notes

@@ -13,7 +13,7 @@ cssclass: devotional-home
 TABLE WITHOUT ID
   file.link as "Devotional",
   date as "Date",
-  tags as "Topics"
+  file.tags as "Topics"
 FROM "Devotional"
 WHERE !contains(file.name, "Home")
 SORT date DESC
@@ -26,10 +26,10 @@ TABLE WITHOUT ID
   length(rows) as "Count",
   rows.file.link as "Studies"
 FROM "Devotional"
-FLATTEN file.etags as tags
-WHERE tags =~ "bible-book"
-GROUP BY tags
-SORT tags ASC
+FLATTEN file.tags as tag
+WHERE contains(tag, "bible-book")
+GROUP BY tag
+SORT tag ASC
 ```
 
 ## Current Reading Plan Progress
@@ -52,9 +52,11 @@ SORT tags ASC
 ```dataview
 LIST
 FROM "Devotional"
-FLATTEN file.etags as tags
-WHERE !contains(tags, "devotional") AND !contains(tags, "bible-book") AND !contains(tags, "homepage")
-GROUP BY tags
+FLATTEN file.tags as tag
+WHERE !contains(tag, "devotional") 
+AND !contains(tag, "bible-book") 
+AND !contains(tag, "homepage")
+GROUP BY tag
 SORT length(rows) DESC
 ```
 
@@ -62,9 +64,9 @@ SORT length(rows) DESC
 ```dataview
 LIST
 FROM "Devotional"
-FLATTEN file.etags as tags
-WHERE tags =~ "lang-"
-GROUP BY tags
+FLATTEN file.tags as tag
+WHERE contains(tag, "lang-")
+GROUP BY tag
 SORT length(rows) DESC
 ```
 

@@ -27,10 +27,10 @@ TABLE WITHOUT ID
   length(rows) as "Count",
   rows.file.link as "Lessons"
 FROM "Lessons"
-FLATTEN file.etags as tags
-WHERE tags =~ "category-"
-GROUP BY tags
-SORT tags ASC
+FLATTEN file.tags as tag
+WHERE contains(tag, "category-")
+GROUP BY tag
+SORT tag ASC
 ```
 
 ## Lessons By Age Group
@@ -39,16 +39,18 @@ TABLE WITHOUT ID
   length(rows) as "Count",
   rows.file.link as "Lessons"
 FROM "Lessons"
-FLATTEN file.etags as tags
-WHERE tags =~ "age-"
-GROUP BY tags
-SORT tags ASC
+FLATTEN file.tags as tag
+WHERE contains(tag, "age-")
+GROUP BY tag
+SORT tag ASC
 ```
 
 ## Scripture Used in Lessons
 ```dataview
-LIST FROM "Lessons"
+LIST 
+FROM "Lessons"
 FLATTEN bible_references as reference
+WHERE reference
 GROUP BY reference
 SORT length(rows) DESC
 LIMIT 10
@@ -60,7 +62,7 @@ TABLE WITHOUT ID
   file.link as "Lesson",
   resources as "Resources"
 FROM "Lessons"
-WHERE resources
+WHERE resources != null
 SORT file.ctime DESC
 ```
 

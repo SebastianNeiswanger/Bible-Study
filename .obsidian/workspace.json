@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Church/Church.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Church"
             }
           }
         ]
@@ -173,12 +173,24 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Church/Why Church Matters.md",
     "README.md",
+    "Lessons/Lessons.md",
+    "Timeline/Timeline.md",
+    "Templates/Prayer.md",
+    "Templates/TimelineEvent.md",
+    "Templates/StudyNote.md",
+    "Templates/ReadingPlan.md",
+    "Templates/ChurchNotes.md",
+    "Church/Church.md",
+    "Devotional/Devotional.md",
+    "Characters/Characters.md",
+    "Languages/Languages.md",
+    "Church/Broken Relationships.md",
+    "Church/Installation Service.md",
+    "images/youtubeThumbnails/BaI0T3uSNuY.jpg",
+    "Church/Why Church Matters.md",
     "Untitled.md",
     "Templates/TheologicalConcept.md",
-    "Templates/Prayer.md",
-    "Templates/ChurchNotes.md",
     "images/youtubeThumbnails/fv5QDZVvxcE.jpg",
     "images/youtubeThumbnails",
     "scripts/debug-templater.js",
@@ -197,16 +209,7 @@
     "Bible Books/Genesis/Chapters",
     "Bible Books/Genesis/Chapters/chapter 38/NASB.md",
     "Bible Books/Genesis/Chapters/chapter 38",
-    "Bible Books/Genesis/Chapter 50/NASB.md",
     "Bible Books/Genesis/Chapter 50",
-    "Chapters/chapter 50/NASB.md",
-    "Chapters/chapter 50",
-    "Bible Books/Genesis 1.md",
-    "Bible Books/Untitled.md",
-    "Templates/BibleBook.md",
-    "Bible Books/Exodus.md",
-    "scripts/README.md",
-    "Templates/Untitled.md",
-    "Templates/ReadingPlan.md"
+    "Chapters/chapter 50"
   ]
 }
